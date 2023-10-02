@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="design.css">
+    <!-- <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script> -->
+    <script src="https://kit.fontawesome.com/c101d74312.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- <audio autoplay loop src="binks_sake.mp3"></audio> -->
+    <div id="header">
+        <div class="cont">
+            <nav>
+                <img src="logoys1-removebg-preview.png" alt="no image" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="login.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="a.html">Quiz</a></li>
+                    <li><a href="https://yashportfolio17.netlify.app/" target="_blank">Portfolio</a></li>
+                    <li><a href="#contact">Login</a></li>
+                    <!-- <i class="fas fa-times" onclick="closemenu()"></i> -->
+                </ul>
+                <!-- <i class="fas fa-bars" onclick="openmenu()"></i> -->
+            </nav>
+            <div class="headertxt">
+                <p>Welcome to Our Platform !</p>
+                <h1><span>Der </span>Persona,</h1>
+                <h3>A Personality <span class="text">Assessment Site</span></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact -->
+    <div id="contact">
+        <div class="cont">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Login Credentials :</h1>
+                    <p><i class="fa-solid fa-envelope"></i> yash100sharma1706@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i> +91 8028027334</p>
+                    <div class="social-icon">
+                        <a href="https://www.facebook.com/profile.php?id=100021719374866&mibextid=ZbWKwL" target="_blank" >
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yasshhhh_03/" target="_blank">
+                            <i class="fa-brands fa-square-instagram"></i>
+                        </a>
+                        <a href="https://www.twitter.com/" target="_blank">
+                            <i class="fa-brands fa-square-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yash-sharma-57a846232" target="_blank">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                    <a href="V8I4-1180.pdf" download class="btn btn2">Download Research Paper</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <!-- <a href="a.html"><button type="submit" class="btn btn2">Move to Quiz</button></a> -->
+                        <a href="a.html" class="btn btn2">Move to Quiz</a>
+                    </form>
+                    <span id="info"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyrights">
+            <p>copyright &copy; Yash. All rights Reserved.</p>
+        </div>
+    </div>
+
+    <!-- <script src="main.js"></script> -->
+    <script>
+        // var typed= new typed(".text",{
+        //     Strings: ["Software Developer" , "Programmer" , "Web developer"],
+        //     typeSpeed:100,
+        //     backSpeed:100,
+        //     backDelay:1000,
+        //     loop:true,
+        // });
+
+    </script>
+
+    <script>
+
+
+        // var optiontitle=document.getElementsByClassName('option');
+        // var optioncont=document.getElementsByClassName('option-cont');
+
+        // function opentab(optioname){
+        //     for(opttitle of optiontitle){
+        //         opttitle.classList.remove("active-title");
+        //     }
+        //     for(opt of optioncont){
+        //         opt.classList.remove("active-opt");
+        //     }
+        //     event.currentTarget.classList.add("active-title");
+        //     document.getElementById(optioname).classList.add("active-opt");
+        // }
+    </script>
+
+    <script>
+        var sideme=document.getElementById("sidemenu");
+
+        function openmenu(){
+            sideme.style.right="0";
+        }
+
+        function closemenu(){
+            sideme.style.right="-200px";
+        }
+    </script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxk9cJZ5MauVJExj1vprqQLvzSUePAvRQOKHGMJv7Xy7MmaARoBMdvm4GhqhF741_WS9Q/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const info = document.getElementById("info")
+    
+        form.addEventListener('submit', e => {  
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                // info.innerHTML = "Thanks For Feedback !"
+                setTimeout(function(){
+                    info.innerHTML= ""
+                }, 1000);
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+</html>
